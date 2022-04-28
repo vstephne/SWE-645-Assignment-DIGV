@@ -36,14 +36,20 @@ public class StudentImpl  implements StudentDao{
 			  return student;
 		  }
 	  });
-	  System.out.println("***************************"+students.size());
+	 // System.out.println("***************************"+students.size());
  	 return students;
   }
 
 @Override
 public void insertStudentToDb(Student student) {
 	// TODO Auto-generated method stub
-	
+	final String sql = "INSERT INTO  test1.Student values(?,?,?,?)";
+	final String name= student.getName();
+	final int id=student.getId();
+	final String email=student.getEmail();
+	final String phone = student.getPhone_number();
+	  
+	 jdbcTemplate.update(sql,new Object[] {id,name,email,phone} );
 }
   
 }

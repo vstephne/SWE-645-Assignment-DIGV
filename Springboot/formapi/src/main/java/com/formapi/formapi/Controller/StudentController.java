@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +26,7 @@ public class StudentController {
 	  }
 	  
 	  @RequestMapping(value="/putStudentDetails",method =RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
-	  public void insertStudent(Student student){
+	  public void insertStudent(@RequestBody Student student){
 		  studentService.insertStudent(student);
 	  }
 }
