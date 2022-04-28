@@ -4,7 +4,6 @@ import java.util.*;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.formapi.formapi.Entity.Student;
 
@@ -26,8 +25,7 @@ public class FakeStudentDao implements StudentDao{
      }
 
     @Override
-	public void insertStudentToDb( Student student) {
-    	System.out.println("id"+student.getId());
+	public void insertStudentToDb(Student student) {
 		this.students.put(student.getId(), student);
 		
 	}
