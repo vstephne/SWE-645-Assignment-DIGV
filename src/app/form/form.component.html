@@ -92,10 +92,16 @@
         </div>
         <div class="radio-box" align="center">
             <p>What garnered your interest in the University?</p>
-            <input type="radio" formControlName="interest" name="radio"><span>Friends</span>
-            <input type="radio" formControlName="interest" name="radio"><span>Television</span>
-            <input type="radio" formControlName="interest" name="radio"><span>Internet</span>
-            <input type="radio" formControlName="interest" name="radio"><span>Other</span>
+            <input type="radio" formControlName="interest"  value="Friends"><span>Friends</span>
+            <input type="radio" formControlName="interest"  value="Television"><span>Television</span>
+            <input type="radio" formControlName="interest"  value="Internet"><span>Internet</span>
+            <input type="radio" formControlName="interest"  value="Other"><span>Other</span>
+            <!-- <mat-radio-group formControlName="interest" fxLayout="column" fxLayoutGap=".25rem">
+              <mat-radio-button value='Friends'>Friends</mat-radio-button>
+              <mat-radio-button value='Television'>Television</mat-radio-button>
+              <mat-radio-button value='Internet'>Internet</mat-radio-button>
+              <mat-radio-button value='Other'>Other</mat-radio-button>
+          </mat-radio-group> -->
         </div><br>
         <div class="raffle-text" align="center"> 
            <label> Raffle Number (Please enter at least 10 comma separated numbers ranging from 1 through 100.)</label><br> <input type="text" formControlName="raffle" name="raffle" placeholder="numbers from 1-100">

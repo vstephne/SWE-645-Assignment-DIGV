@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {FormBuilder} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -8,6 +9,7 @@ import {FormBuilder} from '@angular/forms';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  
   ngOnInit(): void {
     const headers= new HttpHeaders()
   .set('content-type', 'application/json')
@@ -18,9 +20,9 @@ export class FormComponent implements OnInit {
   title = '';
   formGroup;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient,private router:Router) {
     this.formGroup = this.formBuilder.group({
-      id: Math.floor(Math.random() ) ,
+      id: Math.floor(Math.random() * (1000 - 50 + 1))+50,
       firstname: '',
       lastname: '',
       address: '',
@@ -43,8 +45,30 @@ export class FormComponent implements OnInit {
      const options = {headers: {'Content-Type': 'application/json'}};
      console.log(body)
 
+    
+      // let promise = new Promise<void>((resolve, reject) => {
+      //   var req = new XMLHttpRequest();
+      //   req.open('POST', 'http://localhost:8080/putstudents', body, options);
+      //   if (){
 
-     this.http.post<any>('http://localhost:8080/putstudents', body, options).subscribe(data => console.log(data))
+      //   }
+        
+      // });
+
+      const promise = this.http.post('http://localhost:8080/putstudents', body, options).toPromise();
+    console.log(promise);  
+    promise.then((data)=>{
+
+      console.log(data);
+      alert("Success!!");
+      this.router.navigate(['/welcome-page'])
+    }).catch((error)=>{
+      alert("Error!!");
+      console.log("Promise rejected with " + JSON.stringify(error));
+    });
+      
+
+     //this.http.post<any>('http://localhost:8080/putstudents', body, options).subscribe(data => console.log(data))
     }
     
 
