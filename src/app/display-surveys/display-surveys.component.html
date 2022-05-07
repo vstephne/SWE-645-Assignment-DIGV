@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Display Surveys</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
+  </head>
+  <body>
+    <div class="main-block">
+      <section>
+        <div class="left-part" align="center">
+          <!-- <i class="fas fa-graduation-cap"></i> -->
+          <h1>COMPUTER SCIENCE DEPARTMENT</h1>
+        </div>
+      </section>
+
+
+        <div class="subtitle" align="center">
+          <h2>Displaying Student Survey Forms</h2>
+        </div>
+        <section class="surveys">
+            <div *ngFor="let survey of surveys"> 
+              <!-- <li >
+                {{survey.id}}
+              </li> -->
+                <!-- <div><strong>Survey {{survey.id}}</strong></div> -->
+                 <table>
+                 <th><strong>Survey {{survey.id}}</strong></th>
+                  <tr>
+                    <td>First Name:</td>
+                    <td>{{survey.firstname}}</td>
+                  </tr>
+                   <tr>
+                    <td>Last Name:</td>
+                    <td>{{survey.lastname}}</td>
+                  </tr>
+                  <tr>
+                    <td>Address:</td>
+                    <td>{{survey.address}}</td>
+                  </tr>
+                  <tr>
+                    <td>City:</td>
+                    <td>{{survey.city}}</td>
+                  </tr>
+                  <tr>
+                    <td>State:</td>
+                    <td>{{survey.state}}</td>
+                  </tr>
+                  <tr>
+                    <td>Zip Code:</td>
+                    <td>{{survey.zipcode}}</td>
+                  </tr>
+                  <tr>
+                    <td>Email:</td>
+                    <td>{{survey.email}}</td>
+                  </tr>
+                  <tr>
+                    <td>Phone:</td>
+                    <td>{{survey.phone}}</td>
+                  </tr>
+                  <tr>
+                    <td>Date:</td>
+                    <td>{{survey.date}}</td>
+                  </tr>
+                  <tr>
+                    <td>Likelihood:</td>
+                    <td>{{survey.likelihood}}</td>
+                  </tr>
+                  <tr>
+                    <td>Interest:</td>
+                    <td>{{survey.interest}}</td>
+                  </tr>
+                  <tr>
+                    <td>Features:</td>
+                    <td>{{survey.fav_feature}}</td>
+                  </tr>
+                  <tr>
+                    <td>Raffle:</td>
+                    <td>{{survey.raffle}}</td>
+                  </tr>
+                  <tr>
+                    <td>Comments:</td>
+                    <td>{{survey.comments}}</td>
+                  </tr> 
+                </table>  
+                <br> 
+                <!-- <div>Name {{survey.name}}</div>
+                <div>Email {{survey.email}}</div> -->
+              </div>
+        </section>
+        <section>
+          <div class="buttons" align="center">
+            <button routerLink="/welcome-page" target="_blank">Home Page</button>
+        </div>
+        </section>
+    </div>
+  </body>
+</html>
+<router-outlet></router-outlet>
