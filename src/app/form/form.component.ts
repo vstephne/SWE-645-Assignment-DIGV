@@ -55,7 +55,7 @@ export class FormComponent implements OnInit {
         
       // });
 
-      const promise = this.http.post('http://localhost:8080/putstudents', body, options).toPromise();
+      const promise = this.http.post('http://3.91.100.164:31568/putstudents', body, options).toPromise();
     console.log(promise);  
     promise.then((data)=>{
 

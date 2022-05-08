@@ -81,7 +81,7 @@ export class DisplaySurveysComponent implements OnInit {
     function getUsers(): Promise<User[]> {
 
         // For now, consider the data is stored on a static `users.json` file
-        return fetch('http://localhost:8080/Getstudents')
+        return fetch('http://3.91.100.164:31568/Getstudents')
                 // the JSON body is taken from the response
                 .then(response => response.json())
                 .then(response => {
